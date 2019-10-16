@@ -7,14 +7,18 @@ export default class AddTodo extends Component {
     handleChange = (e) => {
         this.setState({
             content: e.target.value
-            })
+        })
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addToDo(this.state);
-        this.setState({
-            content: ''
-        })
+        if (this.state.content === ''){
+            return
+        } else {
+            this.props.addToDo(this.state);
+            this.setState({
+                content: ''
+            })
+        }
     }
     render(){
         return(
