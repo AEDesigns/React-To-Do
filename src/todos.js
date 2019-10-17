@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Todos = ({todos, deleteToDo}) => {
+const Todos = ({todos, deleteToDo, handleEdit}) => {
     const todoList = todos.length ? (
         todos.map(todo => {
             return (
                 <div className="collection-item" key={todo.id}>
-                    <span onClick={() => {deleteToDo(todo.id)}}>{todo.content} <button>x</button></span>
+                    <span>{todo.content} <button onClick={() => {deleteToDo(todo.id)}}>x</button><button onClick={() => {handleEdit()}}><i class="fas fa-edit"></i></button></span>
                 </div>
             )
         })

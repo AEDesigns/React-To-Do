@@ -17,6 +17,11 @@ export default class App extends Component {
             todos
         })
     }
+
+    handleEdit = (id) => {
+        console.log('Its working');
+    }
+
     addToDo = (todo) => {
         todo.id = Math.random();
         let todos = [...this.state.todos, todo]
@@ -24,11 +29,12 @@ export default class App extends Component {
             todos
         })
     }
+    
     render() {
         return (
             <div className="todo-app container">
                 <h1 className="center blue-text">Todo's</h1>
-                <Todos todos={this.state.todos} deleteToDo={this.deleteToDo}/>
+                <Todos todos={this.state.todos} deleteToDo={this.deleteToDo} handleEdit={this.handleEdit}/>
                 <AddTodo addToDo={this.addToDo}/>
             </div>
         )
