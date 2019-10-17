@@ -18,18 +18,23 @@ export default class App extends Component {
         })
     }
 
-    handleEdit = (id) => {
-        console.log('Its working');
+    handleEdit = (belch) => {
+        const todos = this.state.todos.slice();
+        todos.map((todo, index) => {
+            if(todo.id === belch){
+                console.log(todo.id)
+            }
+        })
     }
 
     addToDo = (todo) => {
-        todo.id = Math.random();
+        todo.id = Math.round(Math.random() * 1000);
         let todos = [...this.state.todos, todo]
         this.setState({
             todos
         })
     }
-    
+
     render() {
         return (
             <div className="todo-app container">

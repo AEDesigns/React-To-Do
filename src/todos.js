@@ -5,7 +5,7 @@ const Todos = ({todos, deleteToDo, handleEdit}) => {
         todos.map(todo => {
             return (
                 <div className="collection-item" key={todo.id}>
-                    <span>{todo.content} <button onClick={() => {deleteToDo(todo.id)}}>x</button><button onClick={() => {handleEdit()}}><i class="fas fa-edit"></i></button></span>
+                    <span>{todo.content} <button onClick={() => {deleteToDo(todo.id)}}>x</button><button onClick={() => {handleEdit(todo.id)}}><i class="fas fa-edit"></i></button></span>
                 </div>
             )
         })
